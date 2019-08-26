@@ -14,10 +14,10 @@ function builder(input, output) {
 }
 
 module.exports = function(pathToDistDirectory, arrayOfFiles){
-	arrayOfFiles.forEach(function(file) {
-	    var contents = fs.readFileSync(file, 'utf8');
-	    fs.writeFileSync(pathToDistDirectory + file, builder(contents))
-	})
+    arrayOfFiles.forEach(function(file) {
+        var contents = fs.readFileSync(file, 'utf8');
+        fs.writeFileSync(pathToDistDirectory + file, builder(contents))
+    })
 }
 
 // use like...
