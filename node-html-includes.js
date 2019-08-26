@@ -16,10 +16,10 @@ function builder(input, output) {
 module.exports = function(pathToDistDirectory, arrayOfFiles){
 	arrayOfFiles.forEach(function(file) {
 	    var contents = fs.readFileSync(file, 'utf8');
-	    fs.writeFileSync(pathToDistDirectory + "/" + file, builder(contents))
+	    fs.writeFileSync(pathToDistDirectory + file, builder(contents))
 	})
 }
 
 // use like...
 // const builder = require('./node-html-includes');
-// builder("/path/to/dist", ["index.html", "contact.html", "about.html"])
+// builder("path/to/dist/", ["index.html", "contact.html", "about.html"])
